@@ -44,45 +44,56 @@ export default function HeroTeams() {
           </span>
         </div>
 
-        {/* Headline */}
-        <h1
-          className="font-display text-white leading-none mb-10"
-          style={{ fontSize: "clamp(4rem, 12vw, 12rem)", lineHeight: 0.88 }}
-        >
-          OUR
-          <br />
-          <span
-            className="text-transparent"
-            style={{ WebkitTextStroke: "1px rgba(255,255,255,0.15)" }}
+        {/* 2-col on large screens */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-end">
+          {/* Left — headline */}
+          <h1
+            className="font-display text-white leading-none"
+            style={{ fontSize: "clamp(4rem, 10vw, 10rem)", lineHeight: 0.88 }}
           >
-            TEAMS.
-          </span>
-        </h1>
+            OUR
+            <br />
+            <span
+              className="text-transparent"
+              style={{ WebkitTextStroke: "1px rgba(255,255,255,0.15)" }}
+            >
+              TEAMS.
+            </span>
+          </h1>
 
-        {/* Bottom row */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-8 border-t border-white/5 max-w-4xl">
-          <p className="font-body text-sm text-white/35 leading-relaxed">
-            From youth development to elite competition — Grit fields teams
-            across every age division. Find your squad and get to work.
-          </p>
-          <div className="flex items-center gap-8">
-            {[
-              { value: "6", label: "Active Teams" },
-              { value: "4", label: "Divisions" },
-              { value: "90+", label: "Athletes" },
-            ].map((s, i) => (
-              <div key={i} className="flex flex-col gap-1">
-                <span
-                  className="font-display text-white leading-none"
-                  style={{ fontSize: "clamp(1.8rem, 3vw, 2.5rem)" }}
-                >
-                  {s.value}
-                </span>
-                <span className="font-body text-[9px] tracking-widest text-white/25 uppercase">
-                  {s.label}
-                </span>
-              </div>
-            ))}
+          {/* Right — description + stats */}
+          <div className="flex flex-col gap-8 lg:pb-4">
+            <p className="font-body text-sm text-white/35 leading-relaxed max-w-sm">
+              From youth development to elite competition — Grit fields teams
+              across every age division. Find your squad and get to work.
+            </p>
+
+            <div className="grid grid-cols-3 gap-4 pt-6 border-t border-white/5">
+              {[
+                { value: "6", label: "Active Teams" },
+                { value: "4", label: "Divisions" },
+                { value: "90+", label: "Athletes" },
+              ].map((s, i) => (
+                <div key={i} className="flex flex-col gap-1">
+                  <span
+                    className="font-display text-white leading-none"
+                    style={{ fontSize: "clamp(1.8rem, 3vw, 2.5rem)" }}
+                  >
+                    {s.value}
+                  </span>
+                  <span className="font-body text-[9px] tracking-widest text-white/25 uppercase">
+                    {s.label}
+                  </span>
+                </div>
+              ))}
+            </div>
+
+            <a
+              href="#roster"
+              className="font-body text-[10px] tracking-widest text-white/25 hover:text-white transition-colors uppercase border-b border-white/10 pb-1 self-start"
+            >
+              View All Teams →
+            </a>
           </div>
         </div>
       </div>

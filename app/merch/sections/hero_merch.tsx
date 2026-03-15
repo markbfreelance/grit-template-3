@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-export default function HeroAbout() {
+export default function HeroMerch() {
   const [time, setTime] = useState("");
 
   useEffect(() => {
@@ -24,7 +24,7 @@ export default function HeroAbout() {
         <div className="flex items-center gap-3">
           <span className="w-1.5 h-1.5 rounded-full bg-[#DA1D3A] animate-pulse shrink-0" />
           <span className="font-body text-[9px] tracking-widest text-[#DA1D3A]/60 uppercase">
-            Signal — About
+            Signal — Merch
           </span>
         </div>
         <span className="font-body text-[9px] tracking-widest text-white/15 tabular-nums hidden sm:block">
@@ -37,10 +37,10 @@ export default function HeroAbout() {
         <div className="flex items-center gap-3 mb-8 md:mb-12">
           <div className="w-6 h-px bg-[#DA1D3A] shrink-0" />
           <span className="font-body text-[10px] tracking-[0.4em] text-[#DA1D3A] uppercase">
-            About Us
+            Grit Store
           </span>
           <span className="font-display text-white/4 text-5xl leading-none ml-4 hidden lg:block">
-            00
+            01
           </span>
         </div>
 
@@ -51,31 +51,30 @@ export default function HeroAbout() {
             className="font-display text-white leading-none"
             style={{ fontSize: "clamp(4rem, 10vw, 10rem)", lineHeight: 0.88 }}
           >
-            BUILT
+            WEAR
             <br />
             <span
               className="text-transparent"
               style={{ WebkitTextStroke: "1px rgba(255,255,255,0.15)" }}
             >
-              ON
+              THE
             </span>
             <br />
-            <span className="text-[#DA1D3A] glow-text-red">GRIT.</span>
+            <span className="text-[#DA1D3A] glow-text-red">GRIND.</span>
           </h1>
 
           {/* Right — description + stats */}
           <div className="flex flex-col gap-8 lg:pb-4">
             <p className="font-body text-sm text-white/35 leading-relaxed max-w-sm">
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-              commodo ligula eget dolor. Aenean massa. Cum sociis natoque
-              penatibus et magnis dis parturient montes.
+              Represent Grit on and off the field. Every piece is built for
+              athletes — designed with purpose, built to last.
             </p>
 
             <div className="grid grid-cols-3 gap-4 pt-6 border-t border-white/5">
               {[
-                { value: "500+", label: "Athletes" },
-                { value: "10+", label: "Years" },
-                { value: "98%", label: "Satisfaction" },
+                { value: "20+", label: "Products" },
+                { value: "3", label: "Collections" },
+                { value: "FREE", label: "Ship $75+" },
               ].map((s, i) => (
                 <div key={i} className="flex flex-col gap-1">
                   <span
@@ -90,12 +89,11 @@ export default function HeroAbout() {
                 </div>
               ))}
             </div>
-
             <a
-              href="#story"
+              href="#collection"
               className="font-body text-[10px] tracking-widest text-white/25 hover:text-white transition-colors uppercase border-b border-white/10 pb-1 self-start"
             >
-              Our Story →
+              Browse Collection →
             </a>
           </div>
         </div>
