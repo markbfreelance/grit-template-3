@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
-import { DM_Sans, Inter } from "next/font/google";
+import { Anton, Inter } from "next/font/google";
 import "./globals.css";
 import Header from "./components/header";
 import Footer from "./components/footer";
 
-const dmSans = DM_Sans({
-  variable: "--font-dm-sans",
+const anton = Anton({
+  variable: "--font-anton",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "700", "900"],
+  weight: "400",
 });
 
 const inter = Inter({
@@ -30,7 +30,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className={`${dmSans.variable} ${inter.variable} antialiased`}>
+      <body className={`${anton.variable} ${inter.variable} antialiased`}>
         <Header />
         {children}
         <Footer />

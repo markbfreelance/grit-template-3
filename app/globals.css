@@ -1,11 +1,11 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --surface: #f4f4f4;
-  --foreground: #111111;
-  --muted: #888888;
-  --border: #e5e5e5;
+  --background: #0a0a0a;
+  --surface: #111111;
+  --foreground: #ffffff;
+  --muted: #444444;
+  --border: #222222;
   --accent: #da1d3a;
 }
 
@@ -16,17 +16,104 @@
   --color-muted: var(--muted);
   --color-border: var(--border);
   --color-accent: var(--accent);
-  --font-display: var(--font-dm-sans);
+  --font-display: var(--font-anton);
   --font-body: var(--font-inter);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-body);
+  background: #0a0a0a;
+  color: #ffffff;
+  font-family: var(--font-inter), sans-serif;
+}
+
+.font-display {
+  font-family: var(--font-anton), sans-serif;
+}
+
+.font-body {
+  font-family: var(--font-inter), sans-serif;
+}
+
+/* Diagonal line texture */
+.texture {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 4px,
+    rgba(255, 255, 255, 0.012) 4px,
+    rgba(255, 255, 255, 0.012) 5px
+  );
+}
+
+/* Scan line overlay */
+.scanlines::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.08) 2px,
+    rgba(0, 0, 0, 0.08) 4px
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Red glow */
+.glow-red {
+  box-shadow:
+    0 0 20px rgba(218, 29, 58, 0.4),
+    0 0 60px rgba(218, 29, 58, 0.15);
+}
+
+.glow-text-red {
+  text-shadow: 0 0 40px rgba(218, 29, 58, 0.6);
+}
+
+/* Cursor blink */
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.cursor-blink::after {
+  content: "_";
+  animation: blink 1s step-end infinite;
+  color: #da1d3a;
+}
+
+/* Red border pulse */
+@keyframes border-pulse {
+  0%,
+  100% {
+    border-color: rgba(218, 29, 58, 0.3);
+  }
+  50% {
+    border-color: rgba(218, 29, 58, 0.8);
+  }
+}
+
+.border-pulse {
+  animation: border-pulse 2s ease-in-out infinite;
 }
 
 @keyframes ticker {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee {
   0% {
     transform: translateX(0);
   }
