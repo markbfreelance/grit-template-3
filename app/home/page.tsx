@@ -6,7 +6,7 @@ import CoachesHome from "./sections/coaches_home";
 
 export default function HomePage() {
   return (
-    <main className="bg-white">
+    <main className="bg-[#0a0a0a]">
       <HeroHome />
       <OfferHome />
       <MissionHome />
